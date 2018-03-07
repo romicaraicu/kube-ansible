@@ -27,11 +27,11 @@
 - name: Create base CRD
   shell: >
     kubectl create -f {{ ansible_env.HOME }}/multus-resources/multus-crd.yml
-  when: "'networks.kubernetes.com' not in check_crd.stdout"
+  when: "'kubernetes-network.cni.cncf.io' not in check_crd.stdout"
 
 - name: Check to see which network CRD definitions are present
   shell: >
-    kubectl get networks
+    kubectl get kubernetes-network
   register: check_network_crds
 
 - name: Create flannel network CRD
@@ -46,7 +46,7 @@
 
 - name: Check to see which CRDs are present, for validation
   shell: >
-    kubectl get networks
+    kubectl get kubernetes-network
   register: verify_network_crd
 
 - name: Verify which network CRD definitions are present

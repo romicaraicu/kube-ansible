@@ -8,9 +8,9 @@
 
 - name: Clone multus-cni
   git:
-    repo: https://github.com/Intel-Corp/multus-cni.git
+    repo: "{{ multus_git_url }}"
     dest: /usr/src/multus-cni
-    version: master
+    version: "{{ multus_version }}"
   register: multus_clone
 
 - name: Compile multus-cni
