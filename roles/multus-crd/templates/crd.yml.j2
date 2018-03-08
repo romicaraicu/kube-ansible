@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
   # name must match the spec fields below, and be in the form: <plural>.<group>
-  name: kubernetes-network.cni.cncf.io
+  name: networks.cni.cncf.io
 spec:
   # group name to use for REST API: /apis/<group>/<version>
   group: cni.cncf.io
@@ -12,9 +12,9 @@ spec:
   scope: Namespaced
   names:
     # plural name to be used in the URL: /apis/<group>/<version>/<plural>
-    plural: kubernetes-network
+    plural: networks
     # singular name to be used as an alias on the CLI and for display
-    singular: kubernetes-network
+    singular: network
     # kind is normally the CamelCased singular type. Your resource manifests use this.
     kind: Network
     # shortNames allow shorter string to match your resource on the CLI
