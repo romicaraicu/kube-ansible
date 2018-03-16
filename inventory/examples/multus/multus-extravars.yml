@@ -1,5 +1,6 @@
 ---
 multus_version: "dev/default_network"
+# multus_version: "develop"
 multus_git_url: "https://github.com/redhat-nfvpe/multus-cni.git"
 bridge_networking: true
 bridge_name: br0
